@@ -5,5 +5,5 @@ jobs:
       - image: 'circleci/node:latest'
     steps:
       - checkout
-      - run: sudo npm install dredd@12.0.7 --global
+      - run: sudo npm install dredd --global --unsafe-perm=true --allow-root
       - run: dredd
