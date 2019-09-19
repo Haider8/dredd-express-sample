@@ -1,9 +1,10 @@
 version: 2
 jobs:
-  dredd:
+  build:
     docker:
       - image: 'circleci/node:latest'
     steps:
       - checkout
-      - run: npm install dredd@12.0.7 --global
+      - run: sudo npm install dredd --global --unsafe-perm=true --allow-root
+      - run: npm install express
       - run: dredd
