@@ -1,9 +1,10 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: 'circleci/node:latest'
-    steps:
-      - checkout
-      - run: npm install dredd@12.0.7 --global
-      - run: dredd
+    dredd:
+      docker:
+        - image: 'circleci/node:latest'
+      steps:
+        - checkout
+        - run: npm install dredd@12.0.7 --global
+        - run: dredd
